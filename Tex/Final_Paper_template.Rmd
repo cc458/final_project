@@ -1,0 +1,120 @@
+---
+title: "《国际关系定量分析基础》2020秋季期末论文题目"
+date: "2020年12月31日"
+author:
+  - 成员1
+  - 成员2
+  - 成员3
+  - 成员4
+  - 成员5
+documentclass: ctexart
+header-includes:
+  - \usepackage{float}
+output:
+  #bookdown::word_document2:
+  bookdown::pdf_document2:
+    toc: false
+    number_sections: no
+    latex_engine: xelatex
+indent: true    
+bibliography: bibliography.bib   
+fontsize: 12pt
+spacing: onehalfspacing
+geometry: margin=1in
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(formatR)
+library(dplyr)
+library(ggplot2)
+library(scales)
+library(ggthemes)
+opts_chunk$set(tidy=FALSE, message = FALSE, warning = FALSE,fig.pos = "H", out.extra = "",
+               fig.align='center', tidy.opts=list(arrow=TRUE, indent=2)) 
+```
+
+\begin{center}
+{\bf 内容摘要}
+\end{center}
+
+这一部分是你的内容摘要，通常200-300字左右。内容摘要需要总结研究的问题，主要理论和假设，主要数据和模型，以及简要总结论文的研究发现和研究的意义。
+
+
+
+
+# 导论
+
+这一部分是论文的导论部分，应该不超过2页。第一段首先需要阐述论文的研究问题或者puzzle。同时第二段应该总结既有研究对于这个问题的回答及其不足之处。然后，开始总结你的主要观点、假设，你的研究如何解决这个问题，以及简要预览你的研究发现，总结研究的意义。
+
+关于注释，需要建立一个 `bibliography.bib`，然后就可以直接自动下载论文引用了[@marshall2002polity].
+
+关于脚注：Footnotes are put inside the square brackets after a caret `^[]`, e.g., ^[This is a footnote.]
+
+关于插入图： `![alt text or image title](path/to/image)`
+
+或者使用`knitr::include_graphics`
+```{r eval=FALSE, fig.cap="图的标题"}
+library(knitr)
+include_graphics(path/to/image)
+```
+
+关于参考文献：https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html
+
+
+# 理论和假设
+
+这一部分讨论你对研究问题的主要观点，根据既有的研究提炼的初步回答，形成研究假设。
+
+# 研究设计
+研究设计部分需要关注如何来检验上一部分提出的假设。这包括两个方面：第一，如何获取数据和变量；第二，使用何种统计方法。
+
+## 数据与变量
+
+这一部分介绍数据的来源、变量如何赋值，以及通常简要描述一些关键的变量，尤其是变量的描述性统计表格或者相关系数。例如，数据来自于 @weidmann2010geography
+
+```{r echo=FALSE,results='asis', message=FALSE, warning=FALSE}
+data(mtcars)
+library(stargazer)
+stargazer(mtcars, summary.stat = c("n", "mean", "max", "min", "sd"), 
+          header = FALSE, title = "变量的描述性统计")
+```
+
+
+
+## 模型方法
+
+这一部介绍使用何种统计方法检验假设。
+
+# 统计结果与讨论
+
+这一部分报告统计分析的结果，并结合假设讨论研究的发现
+
+```{r echo=FALSE,results='asis', message=FALSE, warning=FALSE}
+options(digits = 4)
+fit1 = lm(mpg ~ cyl + wt, data = mtcars)
+fit2 = lm(mpg ~ cyl + wt + gear, data = mtcars)
+stargazer(fit1, fit2, header=FALSE, type = "latex", title = "回归结果")
+```
+
+
+
+```{r scatter, echo=FALSE, out.width= "70%", fig.cap='cars回归系数。'}
+library(dotwhisker)
+#library(interplot)
+dwplot(list(fit1, fit2), conf.level = .95) + theme_bw()
+```
+
+# 结论
+这一部分总结全文，阐述研究的启事和意义
+
+
+
+# 参考文献
+\setlength{\parindent}{-0.2in}
+\setlength{\leftskip}{0.2in}
+\setlength{\parskip}{8pt}
+\vspace*{-0.2in}
+\noindent
+
+

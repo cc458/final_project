@@ -1,0 +1,50 @@
+---
+title: '期末论文题目'
+subtitle: "Team-X"
+author: "成员1  成员2   成员3  成员4  成员5"
+date: "2020年12月28日"
+output:
+  xaringan::moon_reader:
+    css: "cc_slides.css"
+    nature:
+      ratio: "16:9"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      
+---
+
+```{r setup, include=FALSE}
+# R options
+options(
+  htmltools.dir.version = FALSE, # for blogdown
+  show.signif.stars = FALSE,     # for regression output
+  warm = 1
+  )
+# Set dpi and height for images
+library(knitr)
+opts_chunk$set(fig.height = 2.65, dpi = 300) 
+# ggplot2 color palette with gray
+color_palette <- list(gray = "#999999", 
+                      salmon = "#E69F00", 
+                      lightblue = "#56B4E9", 
+                      green = "#009E73", 
+                      yellow = "#F0E442", 
+                      darkblue = "#0072B2", 
+                      red = "#D55E00", 
+                      purple = "#CC79A7")
+```
+
+
+## 提纲
+
+- 研究问题
+
+- 假设
+
+- 数据与模型
+
+- 结果
+
+
+
