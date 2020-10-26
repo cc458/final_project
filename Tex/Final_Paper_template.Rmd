@@ -47,6 +47,10 @@ opts_chunk$set(tidy=FALSE, message = FALSE, warning = FALSE,fig.pos = "H", out.e
 
 这一部分是论文的导论部分，应该不超过2页。第一段首先需要阐述论文的研究问题或者puzzle。同时第二段应该总结既有研究对于这个问题的回答及其不足之处。然后，开始总结你的主要观点、假设，你的研究如何解决这个问题，以及简要预览你的研究发现，总结研究的意义。
 
+[@nils2012]
+
+@nils2012
+
 关于注释，需要建立一个 `bibliography.bib`，然后就可以直接自动下载论文引用了[@marshall2002polity].
 
 关于脚注：Footnotes are put inside the square brackets after a caret `^[]`, e.g., ^[This is a footnote.]
